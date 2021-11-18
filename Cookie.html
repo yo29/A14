@@ -1,0 +1,40 @@
+
+<html>
+<h1>This is an Example Cookie Page</h1>
+<p>Yasuhiro Ozawa November 19 2021</p>
+<script>
+document.cookie = "name=Yasu; SameSite=None; Secure";
+document.cookie = "favorite_food=Ramen; SameSite=None; Secure";
+
+function showCookies() {
+const output = document.getElementById('cookies')
+output.textContent = '> ' + document.cookie
+}
+
+function clearOutputCookies() {
+const output = document.getElementById('cookies')
+output.textContent = ''
+}
+
+function addCookie(){
+    var cname;
+    var cvalue;
+    cname = prompt("Enter name of cookie:","");
+    cvalue = prompt("Enter value of Cookie:", "");
+    document.cookie =  cname  + "=" + cvalue;
+}
+</script>
+
+<button onclick="showCookies()">Show cookies</button>
+
+<button onclick="clearOutputCookies()">
+    Clear
+</button>
+<button onclick="addCookie()">
+    Add Cookie
+</button>
+<div>
+    <code id="cookies"></code>
+</div>
+
+</html>
